@@ -3,7 +3,7 @@ const apiOptions = {
     server: 'http://localhost:3000'
 };
 if (process.env.NODE_ENV === 'production') {
-    apiOptions.server = 'https://loc8rv2.herokuapp.com';
+    apiOptions.server = 'https://loc8r-api-zhc4.onrender.com';
 }
 const requestOptions = {
     url: 'http://yourapi.com/api/path',
@@ -29,7 +29,7 @@ const renderHomepage = function (req, res, responseBody) {
         responseBody = [];
     } else {
         if (!responseBody.length) {
-            message = "No plcaes found nearby";
+            message = "No places found nearby";
         }
     }
     res.render('locations-list', {
@@ -40,7 +40,7 @@ const renderHomepage = function (req, res, responseBody) {
         },
         sidebar: "Looking for wifi and a seat? Loc8r helps you find places\
         to work when out and about. Perhaps with coffee, cake or a pint?\
-        Let Loc8r help you find the plcae you're looking for.",
+        Let Loc8r help you find the place you're looking for.",
         locations: responseBody,
         message
     });
